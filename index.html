@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Starter Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="h-full flex flex-col lg:flex-row text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div id="sidebarBackdrop" class="fixed inset-0 bg-slate-900/50 z-40 hidden lg:hidden transition-opacity"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 flex flex-col transition-transform duration-300 transform -translate-x-full lg:translate-x-0">
+        <!-- Logo Area -->
+        <div class="h-16 flex items-center justify-between px-6 border-b border-slate-100">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold shadow-md shadow-indigo-200">
+                    <i class="fa-solid fa-cube text-sm"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-900">NexusUI</span>
+            </div>
+            <button id="closeSidebar" class="lg:hidden text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 px-3 mb-2">Main Menu</div>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl bg-indigo-50 text-indigo-600 font-medium text-sm transition-colors">
+                <i class="fa-solid fa-house w-5 text-center"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="fa-solid fa-chart-pie w-5 text-center"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="fa-solid fa-folder-open w-5 text-center"></i>
+                <span>Projects</span>
+                <span class="ml-auto bg-indigo-100 text-indigo-600 text-xs px-2 py-0.5 rounded-full font-semibold">4</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="fa-solid fa-users w-5 text-center"></i>
+                <span>Team</span>
+            </a>
+
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 px-3 mt-8 mb-2">Preferences</div>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="fa-solid fa-gear w-5 text-center"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="fa-solid fa-circle-question w-5 text-center"></i>
+                <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <!-- Sidebar Footer / User Profile Summary -->
+        <div class="p-4 border-t border-slate-100">
+            <div class="flex items-center space-x-3 p-2 rounded-xl bg-slate-50 border border-slate-100">
+                <img src="https://placehold.co/40x40/indigo/white?text=JD" alt="User Avatar" class="w-10 h-10 rounded-lg object-cover">
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-semibold text-slate-900 truncate">Jane Doe</p>
+                    <p class="text-xs text-slate-500 truncate">jane@example.com</p>
+                </div>
+                <button onclick="showToast('Logged out simulation')" class="text-slate-400 hover:text-rose-600 p-1.5 rounded-lg transition-colors" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+        <!-- Top Navigation Header -->
+        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 lg:px-8 z-30 shrink-0">
+            <div class="flex items-center space-x-4">
+                <button id="openSidebar" class="lg:hidden text-slate-600 hover:text-slate-900 p-2 rounded-xl focus:bg-slate-100">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+                <!-- Search Bar -->
+                <div class="relative hidden sm:block w-64 md:w-80">
+                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    </span>
+                    <input type="text" placeholder="Search anything..." class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:bg-white transition-all">
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center space-x-3">
+                <!-- Notifications dropdown toggle -->
+                <div class="relative">
+                    <button id="notifBtn" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 relative transition-colors">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white"></span>
+                    </button>
+                    <!-- Notifications Dropdown Content -->
+                    <div id="notifDropdown" class="absolute right-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-slate-100 hidden z-50 py-2">
+                        <div class="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
+                            <span class="font-semibold text-sm text-slate-900">Notifications</span>
+                            <span class="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full font-medium">2 new</span>
+                        </div>
+                        <div class="max-h-64 overflow-y-auto divide-y divide-slate-50">
+                            <a href="#" class="block px-4 py-3 hover:bg-slate-50 transition-colors">
+                                <p class="text-xs font-medium text-slate-900">New project assigned to you</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">10 minutes ago</p>
+                            </a>
+                            <a href="#" class="block px-4 py-3 hover:bg-slate-50 transition-colors">
+                                <p class="text-xs font-medium text-slate-900">Server load normalized</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">1 hour ago</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Action Button -->
+                <button onclick="openCustomModal()" class="hidden sm:flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-md shadow-indigo-100 transition-all">
+                    <i class="fa-solid fa-plus text-xs"></i>
+                    <span>New Item</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Content Area -->
+        <main class="flex-1 overflow-y-auto p-4 lg:p-8 space-y-6">
+            <!-- Welcome Banner -->
+            <div class="bg-gradient-to-r from-indigo-600 to-violet-600 rounded-3xl p-6 lg:p-8 text-white shadow-xl shadow-indigo-100 relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="absolute right-0 top-0 translate-x-12 -translate-y-12 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="space-y-2 z-10">
+                    <span class="inline-block bg-white/20 backdrop-blur-md text-xs font-medium px-3 py-1 rounded-full">Starter Template Ready</span>
+                    <h1 class="text-2xl lg:text-3xl font-bold tracking-tight">Welcome back, Jane! 👋</h1>
+                    <p class="text-indigo-100 text-sm max-w-xl">This is your flexible starter layout built with Tailwind CSS and vanilla JavaScript. Tell me how you would like to mold or customize it!</p>
+                </div>
+                <div class="z-10 flex items-center space-x-3 w-full md:w-auto">
+                    <button onclick="showToast('Template is fully customizable!')" class="flex-1 md:flex-none bg-white text-indigo-600 hover:bg-indigo-50 px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm transition-all">
+                        Explore Features
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <!-- Stat Card 1 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <span class="text-emerald-600 bg-emerald-50 text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +12.4%
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Total Revenue</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">$48,250</h3>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="text-emerald-600 bg-emerald-50 text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +8.1%
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Active Users</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">2,420</h3>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="text-rose-600 bg-rose-50 text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-arrow-trend-down"></i> -1.2%
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Conversion Rate</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">4.89%</h3>
+                    </div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <span class="text-emerald-600 bg-emerald-50 text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-check"></i> 100%
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Active Tasks</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">12 / 12</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid: Table + Quick Panel -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Main Table Section -->
+                <div class="lg:col-span-2 bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-900">Recent Projects</h2>
+                            <p class="text-xs text-slate-500 mt-0.5">Manage your active work streams and status.</p>
+                        </div>
+                        <button onclick="showToast('Viewing all projects')" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800">View All</button>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                                    <th class="pb-3 pl-2">Project Name</th>
+                                    <th class="pb-3">Status</th>
+                                    <th class="pb-3">Progress</th>
+                                    <th class="pb-3 text-right pr-2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-50 text-sm">
+                                <tr class="hover:bg-slate-50/55 transition-colors">
+                                    <td class="py-3.5 pl-2 font-medium text-slate-900">E-Commerce Redesign</td>
+                                    <td><span class="bg-amber-50 text-amber-600 text-xs px-2.5 py-1 rounded-full font-semibold">In Progress</span></td>
+                                    <td>
+                                        <div class="w-28 bg-slate-100 rounded-full h-2 overflow-hidden">
+                                            <div class="bg-indigo-600 h-2 rounded-full" style="width: 70%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right pr-2">
+                                        <button onclick="showToast('Opening project details')" class="p-1.5 text-slate-400 hover:text-indigo-600 rounded-lg"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/55 transition-colors">
+                                    <td class="py-3.5 pl-2 font-medium text-slate-900">Mobile App MVP</td>
+                                    <td><span class="bg-emerald-50 text-emerald-600 text-xs px-2.5 py-1 rounded-full font-semibold">Completed</span></td>
+                                    <td>
+                                        <div class="w-28 bg-slate-100 rounded-full h-2 overflow-hidden">
+                                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right pr-2">
+                                        <button onclick="showToast('Opening project details')" class="p-1.5 text-slate-400 hover:text-indigo-600 rounded-lg"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/55 transition-colors">
+                                    <td class="py-3.5 pl-2 font-medium text-slate-900">SaaS Landing Page</td>
+                                    <td><span class="bg-blue-50 text-blue-600 text-xs px-2.5 py-1 rounded-full font-semibold">Review</span></td>
+                                    <td>
+                                        <div class="w-28 bg-slate-100 rounded-full h-2 overflow-hidden">
+                                            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right pr-2">
+                                        <button onclick="showToast('Opening project details')" class="p-1.5 text-slate-400 hover:text-indigo-600 rounded-lg"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Side Panel / Quick Interaction -->
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 mb-1">Quick Actions</h2>
+                        <p class="text-xs text-slate-500 mb-6">Fast tools for everyday workflows.</p>
+
+                        <div class="space-y-3">
+                            <button onclick="showToast('Report downloaded successfully')" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 text-slate-700 text-sm font-medium transition-all group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-xl bg-white shadow-sm flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <i class="fa-solid fa-download text-xs"></i>
+                                    </div>
+                                    <span>Download Monthly Report</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-indigo-600"></i>
+                            </button>
+
+                            <button onclick="openCustomModal()" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 text-slate-700 text-sm font-medium transition-all group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-xl bg-white shadow-sm flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <i class="fa-solid fa-user-plus text-xs"></i>
+                                    </div>
+                                    <span>Invite Team Member</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-indigo-600"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-indigo-50/50 p-4 rounded-2xl border border-indigo-100/50">
+                        <p class="text-xs font-semibold text-indigo-900">Ready for Customization</p>
+                        <p class="text-[11px] text-indigo-600 mt-1">Tell me what colors, sections, forms, or charts you'd like to add or change next!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Interactive Modal (Hidden by default) -->
+    <div id="customModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 space-y-4 animate-in fade-in zoom-in duration-200">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900">Create New Entry</h3>
+                <button onclick="closeCustomModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <p class="text-xs text-slate-500">Provide details below. This is fully interactive and ready to be customized.</p>
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Item Title</label>
+                    <input type="text" id="modalInput" placeholder="Enter title..." class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:bg-white">
+                </div>
+            </div>
+            <div class="flex items-center justify-end space-x-3 pt-4 border-t border-slate-100">
+                <button onclick="closeCustomModal()" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-xl">Cancel</button>
+                <button onclick="submitModal()" class="px-5 py-2 text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md shadow-indigo-100">Save Item</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+    <!-- Vanilla JS Script for Interactivity -->
+    <script>
+        // Sidebar toggle logic for mobile
+        const sidebar = document.getElementById('sidebar');
+        const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+        const openSidebarBtn = document.getElementById('openSidebar');
+        const closeSidebarBtn = document.getElementById('closeSidebar');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            sidebarBackdrop.classList.toggle('hidden');
+        }
+
+        openSidebarBtn.addEventListener('click', toggleSidebar);
+        closeSidebarBtn.addEventListener('click', toggleSidebar);
+        sidebarBackdrop.addEventListener('click', toggleSidebar);
+
+        // Notifications dropdown toggle
+        const notifBtn = document.getElementById('notifBtn');
+        const notifDropdown = document.getElementById('notifDropdown');
+
+        notifBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notifDropdown.classList.toggle('hidden');
+        });
+
+        window.addEventListener('click', () => {
+            if (!notifDropdown.classList.contains('hidden')) {
+                notifDropdown.classList.add('hidden');
+            }
+        });
+
+        // Modal handling
+        const customModal = document.getElementById('customModal');
+
+        function openCustomModal() {
+            customModal.classList.remove('hidden');
+        }
+
+        function closeCustomModal() {
+            customModal.classList.add('hidden');
+        }
+
+        function submitModal() {
+            const val = document.getElementById('modalInput').value;
+            closeCustomModal();
+            showToast(val ? `Created: "${val}"` : 'Item created successfully!');
+            document.getElementById('modalInput').value = '';
+        }
+
+        // Toast notification system
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'pointer-events-auto bg-slate-900 text-white text-xs px-4 py-3 rounded-2xl shadow-xl flex items-center space-x-3 transform translate-y-2 opacity-0 transition-all duration-300';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400"></i><span>${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Trigger transition
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
