@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistefacil | Catálogo de Moda y Ropa</title>
+    <title>Vistefacil | Catálogo Oficial Nike & Moda</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,7 +15,7 @@
                         brand: {
                             DEFAULT: '#0f172a',
                             light: '#1e293b',
-                            accent: '#3b82f6'
+                            accent: '#111827'
                         }
                     }
                 }
@@ -32,11 +31,11 @@
             <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <div class="bg-slate-900 text-white p-2.5 rounded-xl flex items-center justify-center shadow-md">
-                    <i class="fa-solid fa-shirt text-xl"></i>
+                    <i class="fa-solid fa-bolt text-xl"></i>
                 </div>
                 <div>
                     <span class="text-2xl font-black tracking-tight text-slate-900">VISTEFACIL</span>
-                    <span class="block text-xs font-medium text-slate-500 uppercase tracking-widest">Moda & Estilo</span>
+                    <span class="block text-xs font-medium text-slate-500 uppercase tracking-widest">Special Nike Edition</span>
                 </div>
             </div>
 
@@ -46,7 +45,7 @@
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
-                    <input type="text" id="searchInput" placeholder="Buscar prendas, abrigos, sudaderas..." 
+                    <input type="text" id="searchInput" placeholder="Buscar Air Force 1, Tech Fleece, Jordan..." 
                         class="w-full pl-10 pr-4 py-2.5 bg-slate-100 border border-transparent rounded-full text-sm focus:outline-none focus:bg-white focus:border-slate-300 transition">
                 </div>
             </div>
@@ -55,7 +54,7 @@
             <div class="flex items-center space-x-4">
                 <button onclick="toggleCart()" class="relative p-2.5 text-slate-700 hover:bg-slate-100 rounded-full transition flex items-center space-x-2">
                     <i class="fa-solid fa-bag-shopping text-xl"></i>
-                    <span id="cartCount" class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                    <span id="cartCount" class="bg-black text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
                 </button>
             </div>
         </div>
@@ -67,7 +66,7 @@
             <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <input type="text" id="searchInputMobile" placeholder="Buscar prendas..." 
+            <input type="text" id="searchInputMobile" placeholder="Buscar prendas o zapatillas Nike..." 
                 class="w-full pl-10 pr-4 py-2.5 bg-slate-100 border border-transparent rounded-full text-sm focus:outline-none focus:bg-white focus:border-slate-300 transition">
         </div>
     </div>
@@ -81,9 +80,9 @@
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm sticky top-28 space-y-6">
                     <div class="flex items-center justify-between pb-4 border-b border-slate-100">
                         <h2 class="font-bold text-lg text-slate-900 flex items-center gap-2">
-                            <i class="fa-solid fa-filter text-blue-600"></i> Filtros
+                            <i class="fa-solid fa-filter text-black"></i> Filtros Nike
                         </h2>
-                        <button onclick="resetFilters()" class="text-xs text-blue-600 hover:text-blue-800 font-semibold transition">
+                        <button onclick="resetFilters()" class="text-xs text-slate-600 hover:text-black font-semibold transition">
                             Limpiar todo
                         </button>
                     </div>
@@ -93,28 +92,28 @@
                         <h3 class="font-semibold text-sm text-slate-900 mb-3">Tipo de Prenda</h3>
                         <div id="categoryFilters" class="space-y-2">
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="category" value="todos" checked class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Todas las prendas</span>
+                                <input type="checkbox" name="category" value="todos" checked class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Todo Nike (100)</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="category" value="Abrigos" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Abrigos y Chaquetas</span>
+                                <input type="checkbox" name="category" value="Zapatillas" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Zapatillas / Sneakers</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="category" value="Sudaderas" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Sudaderas</span>
+                                <input type="checkbox" name="category" value="Sudaderas" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Sudaderas & Tech Fleece</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="category" value="Pantalones" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Pantalones y Vaqueros</span>
+                                <input type="checkbox" name="category" value="Abrigos" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Chaquetas & Abrigos</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="category" value="Camisetas" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Camisetas</span>
+                                <input type="checkbox" name="category" value="Pantalones" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Pantalones & Joggers</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="category" value="Zapatillas" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Zapatillas</span>
+                                <input type="checkbox" name="category" value="Camisetas" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Camisetas & Tops</span>
                             </label>
                         </div>
                     </div>
@@ -125,12 +124,12 @@
                     <div>
                         <h3 class="font-semibold text-sm text-slate-900 mb-3">Talla</h3>
                         <div id="sizeFilters" class="grid grid-cols-3 gap-2">
-                            <button onclick="toggleFilter(this, 'size')" data-value="XS" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-slate-400 transition">XS</button>
-                            <button onclick="toggleFilter(this, 'size')" data-value="S" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-slate-400 transition">S</button>
-                            <button onclick="toggleFilter(this, 'size')" data-value="M" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-slate-400 transition">M</button>
-                            <button onclick="toggleFilter(this, 'size')" data-value="L" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-slate-400 transition">L</button>
-                            <button onclick="toggleFilter(this, 'size')" data-value="XL" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-slate-400 transition">XL</button>
-                            <button onclick="toggleFilter(this, 'size')" data-value="XXL" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-slate-400 transition">XXL</button>
+                            <button onclick="toggleFilter(this, 'size')" data-value="S" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-black transition">S</button>
+                            <button onclick="toggleFilter(this, 'size')" data-value="M" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-black transition">M</button>
+                            <button onclick="toggleFilter(this, 'size')" data-value="L" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-black transition">L</button>
+                            <button onclick="toggleFilter(this, 'size')" data-value="XL" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-black transition">XL</button>
+                            <button onclick="toggleFilter(this, 'size')" data-value="42" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-black transition">42 (EU)</button>
+                            <button onclick="toggleFilter(this, 'size')" data-value="43" class="filter-btn-size py-1.5 text-xs font-medium border border-slate-200 rounded-lg text-slate-600 hover:border-black transition">43 (EU)</button>
                         </div>
                     </div>
 
@@ -144,7 +143,7 @@
                             <button onclick="toggleFilter(this, 'color')" data-value="Blanco" title="Blanco" class="w-7 h-7 rounded-full bg-white border-2 border-slate-300 hover:scale-110 transition shadow-sm"></button>
                             <button onclick="toggleFilter(this, 'color')" data-value="Gris" title="Gris" class="w-7 h-7 rounded-full bg-slate-400 border-2 border-transparent hover:scale-110 transition shadow-sm"></button>
                             <button onclick="toggleFilter(this, 'color')" data-value="Azul" title="Azul" class="w-7 h-7 rounded-full bg-blue-600 border-2 border-transparent hover:scale-110 transition shadow-sm"></button>
-                            <button onclick="toggleFilter(this, 'color')" data-value="Beige" title="Beige" class="w-7 h-7 rounded-full bg-amber-200 border-2 border-transparent hover:scale-110 transition shadow-sm"></button>
+                            <button onclick="toggleFilter(this, 'color')" data-value="Rojo" title="Rojo" class="w-7 h-7 rounded-full bg-red-600 border-2 border-transparent hover:scale-110 transition shadow-sm"></button>
                             <button onclick="toggleFilter(this, 'color')" data-value="Verde" title="Verde" class="w-7 h-7 rounded-full bg-emerald-700 border-2 border-transparent hover:scale-110 transition shadow-sm"></button>
                         </div>
                     </div>
@@ -156,28 +155,24 @@
                         <h3 class="font-semibold text-sm text-slate-900 mb-3">Material</h3>
                         <div id="materialFilters" class="space-y-2">
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="material" value="Algodón" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Algodón</span>
+                                <input type="checkbox" name="material" value="Algodón" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Algodón Premium</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="material" value="Lana" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Lana</span>
+                                <input type="checkbox" name="material" value="Tech Fleece" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Tech Fleece (Espaciador)</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="material" value="Cuero" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Cuero</span>
+                                <input type="checkbox" name="material" value="Poliéster" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Poliéster / Dri-FIT</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="material" value="Vaquero" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Mezclilla / Vaquero</span>
+                                <input type="checkbox" name="material" value="Cuero" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Cuero Sintético / Piel</span>
                             </label>
                             <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="material" value="Poliéster" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Poliéster</span>
-                            </label>
-                            <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer hover:text-slate-900">
-                                <input type="checkbox" name="material" value="Lino" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                                <span>Lino</span>
+                                <input type="checkbox" name="material" value="Flyknit" class="rounded border-slate-300 text-black focus:ring-black">
+                                <span>Flyknit Tejido</span>
                             </label>
                         </div>
                     </div>
@@ -188,7 +183,7 @@
             <!-- Product Catalog Grid -->
             <div class="flex-1">
                 <div class="flex justify-between items-center mb-6">
-                    <h1 class="text-xl font-bold text-slate-900">Catálogo de Prendas (<span id="productCount">0</span>)</h1>
+                    <h1 class="text-xl font-bold text-slate-900">Catálogo Oficial Nike (<span id="productCount">0</span> prendas)</h1>
                 </div>
 
                 <!-- Products Grid -->
@@ -198,10 +193,10 @@
 
                 <!-- Empty State -->
                 <div id="noResults" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-4">
-                    <i class="fa-solid fa-shirt text-4xl text-slate-300 mb-3"></i>
-                    <h3 class="text-lg font-bold text-slate-800">No se encontraron prendas</h3>
-                    <p class="text-slate-500 text-sm mt-1">Prueba a cambiar los filtros o los términos de búsqueda.</p>
-                    <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-xl hover:bg-blue-700 transition">
+                    <i class="fa-solid fa-bolt text-4xl text-slate-300 mb-3"></i>
+                    <h3 class="text-lg font-bold text-slate-800">No se encontraron artículos Nike</h3>
+                    <p class="text-slate-500 text-sm mt-1">Prueba a cambiar los filtros de búsqueda o restablece los ajustes.</p>
+                    <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-black text-white text-sm font-medium rounded-xl hover:bg-slate-800 transition">
                         Restablecer filtros
                     </button>
                 </div>
@@ -213,23 +208,113 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 mt-auto py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
-            &copy; 2026 Vistefacil. Todos los derechos reservados.
+            &copy; 2026 Vistefacil - Distribuidor Autorizado Nike Experience. Todos los derechos reservados.
         </div>
     </footer>
 
-    <!-- JavaScript Application Logic -->
+    <!-- JavaScript Application Logic: 100 Real Nike Products -->
     <script>
         const products = [
-            { id: 1, name: "Abrigo Oversize de Lana", category: "Abrigos", price: 129.99, size: ["M", "L", "XL"], color: "Negro", material: "Lana", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=60" },
-            { id: 2, name: "Sudadera Minimalista con Capucha", category: "Sudaderas", price: 49.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Algodón", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
-            { id: 3, name: "Pantalón Chino Casual", category: "Pantalones", price: 39.99, size: ["S", "M", "L"], color: "Beige", material: "Algodón", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
-            { id: 4, name: "Camiseta Básica Premium", category: "Camisetas", price: 19.99, size: ["XS", "S", "M", "L", "XL"], color: "Blanco", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
-            { id: 5, name: "Chaqueta Biker de Cuero", category: "Abrigos", price: 189.99, size: ["M", "L"], color: "Negro", material: "Cuero", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60" },
-            { id: 6, name: "Vaqueros Slim Fit Denim", category: "Pantalones", price: 59.99, size: ["S", "M", "L", "XL", "XXL"], color: "Azul", material: "Vaquero", image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop&q=60" },
-            { id: 7, name: "Zapatillas Urbanas Blancas", category: "Zapatillas", price: 79.99, size: ["40", "42", "43", "44"], color: "Blanco", material: "Poliéster", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
-            { id: 8, name: "Sudadera Deportiva", category: "Sudaderas", price: 54.99, size: ["M", "L", "XL"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60" },
-            { id: 9, name: "Camisa de Lino Veraniega", category: "Camisetas", price: 45.00, size: ["S", "M", "L", "XL"], color: "Beige", material: "Lino", image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&auto=format&fit=crop&q=60" },
-            { id: 10, name: "Chaqueta Bomber Verde", category: "Abrigos", price: 89.99, size: ["S", "M", "L"], color: "Verde", material: "Poliéster", image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=600&auto=format&fit=crop&q=60" }
+            { id: 1, name: "Nike Air Force 1 '07 White", category: "Zapatillas", price: 119.99, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 2, name: "Nike Tech Fleece Full-Zip Hoodie Black", category: "Sudaderas", price: 129.99, size: ["S", "M", "L", "XL"], color: "Negro", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 3, name: "Nike Club Fleece Joggers Grey", category: "Pantalones", price: 54.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Algodón", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
+            { id: 4, name: "Nike Air Max 90 Essential", category: "Zapatillas", price: 149.99, size: ["40", "42", "43", "44"], color: "Blanco", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 5, name: "Nike Sportswear Club Tee White", category: "Camisetas", price: 29.99, size: ["S", "M", "L", "XL"], color: "Blanco", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 6, name: "Nike Dunk Low Retro Panda", category: "Zapatillas", price: 119.99, size: ["41", "42", "43", "44", "45"], color: "Negro", material: "Cuero", image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&auto=format&fit=crop&q=60" },
+            { id: 7, name: "Nike Windrunner Jacket Classic", category: "Abrigos", price: 99.99, size: ["M", "L", "XL"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60" },
+            { id: 8, name: "Nike Pro Dri-FIT Tight Top", category: "Camisetas", price: 39.99, size: ["S", "M", "L"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=600&auto=format&fit=crop&q=60" },
+            { id: 9, name: "Nike Air Max Plus TN OG", category: "Zapatillas", price: 179.99, size: ["41", "42", "43", "44"], color: "Rojo", material: "Poliéster", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=60" },
+            { id: 10, name: "Nike Solo Swoosh Fleece Pants", category: "Pantalones", price: 89.99, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=600&auto=format&fit=crop&q=60" },
+            { id: 11, name: "Nike Mercurial Vapor Elite FG", category: "Zapatillas", price: 249.99, size: ["41", "42", "43"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&auto=format&fit=crop&q=60" },
+            { id: 12, name: "Nike Tech Fleece Joggers Dark Grey", category: "Pantalones", price: 109.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=600&auto=format&fit=crop&q=60" },
+            { id: 13, name: "Nike Air Jordan 1 Retro High OG", category: "Zapatillas", price: 189.99, size: ["41", "42", "43", "44", "45"], color: "Rojo", material: "Cuero", image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=60" },
+            { id: 14, name: "Nike Sportswear Heritage Hoodie", category: "Sudaderas", price: 69.99, size: ["S", "M", "L", "XL"], color: "Verde", material: "Algodón", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60" },
+            { id: 15, name: "Nike Blazer Mid '77 Vintage", category: "Zapatillas", price: 104.99, size: ["40", "41", "42", "43"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&auto=format&fit=crop&q=60" },
+            { id: 16, name: "Nike Pegasus 41 Running Shoes", category: "Zapatillas", price: 139.99, size: ["41", "42", "43", "44"], color: "Azul", material: "Flyknit", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=60" },
+            { id: 17, name: "Nike Therma-FIT puffer Puffer Vest", category: "Abrigos", price: 119.99, size: ["M", "L", "XL"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=600&auto=format&fit=crop&q=60" },
+            { id: 18, name: "Nike Dri-FIT Legend Training Tee", category: "Camisetas", price: 32.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Poliéster", image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60" },
+            { id: 19, name: "Nike Air Force 1 Shadow Triple White", category: "Zapatillas", price: 129.99, size: ["38", "39", "40", "41"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 20, name: "Nike Club Fleece Crewneck Sweatshirt", category: "Sudaderas", price: 54.99, size: ["S", "M", "L", "XL"], color: "Azul", material: "Algodón", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 21, name: "Nike Air Max 270 React", category: "Zapatillas", price: 159.99, size: ["41", "42", "43", "44"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 22, name: "Nike Essential Woven Running Pants", category: "Pantalones", price: 79.99, size: ["S", "M", "L"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
+            { id: 23, name: "Nike Sportswear Futura Icon Tee", category: "Camisetas", price: 35.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 24, name: "Nike Air Zoom Vomero 5", category: "Zapatillas", price: 160.00, size: ["41", "42", "43", "44", "45"], color: "Beige", material: "Flyknit", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 25, name: "Nike Sportswear Tech Pack Bomber", category: "Abrigos", price: 179.99, size: ["M", "L", "XL"], color: "Verde", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=600&auto=format&fit=crop&q=60" },
+            { id: 26, name: "Nike Jordan Brooklyn Fleece Shorts", category: "Pantalones", price: 55.00, size: ["S", "M", "L", "XL"], color: "Rojo", material: "Algodón", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60" },
+            { id: 27, name: "Nike Air Force 1 '07 Black", category: "Zapatillas", price: 119.99, size: ["41", "42", "43", "44", "45"], color: "Negro", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 28, name: "Nike Sportswear Club Fleece Full-Zip", category: "Sudaderas", price: 69.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Algodón", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 29, name: "Nike Dri-FIT Challenger Running Shorts", category: "Pantalones", price: 45.00, size: ["S", "M", "L"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60" },
+            { id: 30, name: "Nike Air Max 97 Silver Bullet", category: "Zapatillas", price: 189.99, size: ["41", "42", "43", "44"], color: "Gris", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 31, name: "Nike Sportswear Premium Essentials Tee", category: "Camisetas", price: 39.99, size: ["S", "M", "L", "XL"], color: "Beige", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 32, name: "Nike Tech Fleece Full-Zip Hoodie Grey", category: "Sudaderas", price: 129.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 33, name: "Nike Air Jordan 4 Retro Bred", category: "Zapatillas", price: 219.99, size: ["41", "42", "43", "44"], color: "Negro", material: "Cuero", image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=60" },
+            { id: 34, name: "Nike Sportswear Synthetic Fill Parka", category: "Abrigos", price: 199.99, size: ["M", "L", "XL"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=60" },
+            { id: 35, name: "Nike Air Max 1 Essential", category: "Zapatillas", price: 139.99, size: ["41", "42", "43", "44"], color: "Blanco", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 36, name: "Nike Club Fleece Open-Hem Pants", category: "Pantalones", price: 54.99, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
+            { id: 37, name: "Nike Jordan Brooklyn Hoodie", category: "Sudaderas", price: 85.00, size: ["S", "M", "L", "XL"], color: "Rojo", material: "Algodón", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60" },
+            { id: 38, name: "Nike Air Force 1 Mid '07", category: "Zapatillas", price: 124.99, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 39, name: "Nike Sportswear Swoosh League Tee", category: "Camisetas", price: 34.99, size: ["S", "M", "L"], color: "Azul", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 40, name: "Nike Air VaporMax Plus", category: "Zapatillas", price: 210.00, size: ["41", "42", "43", "44"], color: "Negro", material: "Flyknit", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 41, name: "Nike Pro Combat Compression Shirt", category: "Camisetas", price: 42.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=600&auto=format&fit=crop&q=60" },
+            { id: 42, name: "Nike ACG Trail Fleece Hoodie", category: "Sudaderas", price: 145.00, size: ["M", "L", "XL"], color: "Verde", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 43, name: "Nike Dunk Low Retro White University Blue", category: "Zapatillas", price: 119.99, size: ["41", "42", "43", "44"], color: "Azul", material: "Cuero", image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&auto=format&fit=crop&q=60" },
+            { id: 44, name: "Nike Sportswear Tech Fleece Pants", category: "Pantalones", price: 109.99, size: ["S", "M", "L", "XL"], color: "Negro", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=600&auto=format&fit=crop&q=60" },
+            { id: 45, name: "Nike Air Zoom Pegasus 40", category: "Zapatillas", price: 129.99, size: ["41", "42", "43", "44"], color: "Gris", material: "Flyknit", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=60" },
+            { id: 46, name: "Nike Classic Cortez White/Black", category: "Zapatillas", price: 89.99, size: ["40", "41", "42", "43"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 47, name: "Nike Sportswear Tech Fleece Windrunner", category: "Abrigos", price: 139.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60" },
+            { id: 48, name: "Nike Club Fleece Shorts", category: "Pantalones", price: 39.99, size: ["S", "M", "L", "XL"], color: "Gris", material: "Algodón", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60" },
+            { id: 49, name: "Nike Air Jordan 1 Low", category: "Zapatillas", price: 110.00, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=60" },
+            { id: 50, name: "Nike Dri-FIT Academy Football Top", category: "Camisetas", price: 34.99, size: ["S", "M", "L", "XL"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60" },
+            { id: 51, name: "Nike Air Max 95 OG Neon", category: "Zapatillas", price: 189.99, size: ["41", "42", "43", "44"], color: "Gris", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 52, name: "Nike Sportswear Club Fleece Hooded Jacket", category: "Sudaderas", price: 74.99, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 53, name: "Nike Air Max 2070 Future", category: "Zapatillas", price: 169.99, size: ["41", "42", "43", "44"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 54, name: "Nike Solo Swoosh Cotton Crew Tee", category: "Camisetas", price: 40.00, size: ["S", "M", "L", "XL"], color: "Blanco", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 55, name: "Nike Sportswear Storm-FIT Jacket", category: "Abrigos", price: 159.99, size: ["M", "L", "XL"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60" },
+            { id: 56, name: "Nike Air Force 1 Fontanka", category: "Zapatillas", price: 125.00, size: ["38", "39", "40", "41"], color: "Beige", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 57, name: "Nike Jordan Essentials Fleece Pants", category: "Pantalones", price: 90.00, size: ["S", "M", "L"], color: "Rojo", material: "Algodón", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
+            { id: 58, name: "Nike Air Max Dawn", category: "Zapatillas", price: 115.00, size: ["41", "42", "43", "44"], color: "Gris", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 59, name: "Nike Sportswear Club Graphic Pullover", category: "Sudaderas", price: 65.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60" },
+            { id: 60, name: "Nike Dri-FIT ADV Running Singlet", category: "Camisetas", price: 50.00, size: ["S", "M", "L"], color: "Rojo", material: "Poliéster", image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60" },
+            { id: 61, name: "Nike Dunk Low Medium Olive", category: "Zapatillas", price: 119.99, size: ["41", "42", "43", "44"], color: "Verde", material: "Cuero", image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&auto=format&fit=crop&q=60" },
+            { id: 62, name: "Nike Unlimited Versatile Shorts", category: "Pantalones", price: 65.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60" },
+            { id: 63, name: "Nike Air Max SC Leather", category: "Zapatillas", price: 90.00, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 64, name: "Nike Sportswear Tech Fleece Crew", category: "Sudaderas", price: 110.00, size: ["S", "M", "L", "XL"], color: "Gris", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 65, name: "Nike Air Jordan 3 Retro Cement", category: "Zapatillas", price: 210.00, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=60" },
+            { id: 66, name: "Nike Sportswear Premium Jacket", category: "Abrigos", price: 139.99, size: ["M", "L", "XL"], color: "Beige", material: "Poliéster", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60" },
+            { id: 67, name: "Nike Dri-FIT Academy Training Pants", category: "Pantalones", price: 55.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
+            { id: 68, name: "Nike Air Max 270 React Eng", category: "Zapatillas", price: 160.00, size: ["41", "42", "43", "44"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 69, name: "Nike Sportswear Essential Crop Tee", category: "Camisetas", price: 30.00, size: ["XS", "S", "M"], color: "Blanco", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 70, name: "Nike Air Force 1 Experimental", category: "Zapatillas", price: 130.00, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 71, name: "Nike Jordan Jumpman Fleece Hoodie", category: "Sudaderas", price: 85.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60" },
+            { id: 72, name: "Nike Air Max Scorpion Flyknit", category: "Zapatillas", price: 250.00, size: ["41", "42", "43", "44"], color: "Beige", material: "Flyknit", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 73, name: "Nike Sportswear Synthetic Puffer", category: "Abrigos", price: 180.00, size: ["M", "L", "XL"], color: "Rojo", material: "Poliéster", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=60" },
+            { id: 74, name: "Nike Club Woven Cargo Pants", category: "Pantalones", price: 79.99, size: ["S", "M", "L", "XL"], color: "Verde", material: "Algodón", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
+            { id: 75, name: "Nike Air Max Genome", category: "Zapatillas", price: 170.00, size: ["41", "42", "43", "44"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 76, name: "Nike Sportswear Classic Long Sleeve Tee", category: "Camisetas", price: 40.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 77, name: "Nike Air Jordan 11 Retro Concord", category: "Zapatillas", price: 229.99, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=60" },
+            { id: 78, name: "Nike Sportswear Tech Fleece Zip Vest", category: "Abrigos", price: 120.00, size: ["M", "L", "XL"], color: "Gris", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=600&auto=format&fit=crop&q=60" },
+            { id: 79, name: "Nike Pro Warm Tight Leggings", category: "Pantalones", price: 50.00, size: ["S", "M", "L"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=600&auto=format&fit=crop&q=60" },
+            { id: 80, name: "Nike Air Max Pre-Day", category: "Zapatillas", price: 130.00, size: ["41", "42", "43", "44"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 81, name: "Nike Sportswear Club Fleece Hoodie", category: "Sudaderas", price: 65.00, size: ["S", "M", "L", "XL"], color: "Beige", material: "Algodón", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 82, name: "Nike Air Force 1 Pixel", category: "Zapatillas", price: 110.00, size: ["38", "39", "40", "41"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 83, name: "Nike Dri-FIT Miler Running Top", category: "Camisetas", price: 35.00, size: ["S", "M", "L", "XL"], color: "Azul", material: "Poliéster", image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60" },
+            { id: 84, name: "Nike Sportswear Tech Fleece Shorts", category: "Pantalones", price: 75.00, size: ["S", "M", "L", "XL"], color: "Gris", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60" },
+            { id: 85, name: "Nike Air Max 90 Terrascape", category: "Zapatillas", price: 150.00, size: ["41", "42", "43", "44"], color: "Verde", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 86, name: "Nike Jordan Essentials Graphic Tee", category: "Camisetas", price: 40.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=60" },
+            { id: 87, name: "Nike Air Jordan 6 Retro Infrared", category: "Zapatillas", price: 200.00, size: ["41", "42", "43", "44"], color: "Negro", material: "Cuero", image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=60" },
+            { id: 88, name: "Nike Sportswear Heritage Windbreaker", category: "Abrigos", price: 95.00, size: ["M", "L", "XL"], color: "Rojo", material: "Poliéster", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60" },
+            { id: 89, name: "Nike Club Fleece Joggers Navy", category: "Pantalones", price: 54.99, size: ["S", "M", "L", "XL"], color: "Azul", material: "Algodón", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=60" },
+            { id: 90, name: "Nike Air Max 2027 Flyknit", category: "Zapatillas", price: 180.00, size: ["41", "42", "43", "44"], color: "Negro", material: "Flyknit", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 91, name: "Nike Sportswear Premium Crew", category: "Sudaderas", price: 75.00, size: ["S", "M", "L", "XL"], color: "Blanco", material: "Algodón", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 92, name: "Nike Air Force 1 Crater Flyknit", category: "Zapatillas", price: 120.00, size: ["41", "42", "43", "44"], color: "Gris", material: "Flyknit", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&auto=format&fit=crop&q=60" },
+            { id: 93, name: "Nike Pro Flex Vent Max Shorts", category: "Pantalones", price: 55.00, size: ["S", "M", "L", "XL"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60" },
+            { id: 94, name: "Nike Air Max SYSTM", category: "Zapatillas", price: 100.00, size: ["41", "42", "43", "44"], color: "Blanco", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 95, name: "Nike Sportswear Tech Fleece Full-Zip Blue", category: "Sudaderas", price: 129.99, size: ["S", "M", "L", "XL"], color: "Azul", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=60" },
+            { id: 96, name: "Nike Air Jordan 12 Retro Taxi", category: "Zapatillas", price: 219.99, size: ["41", "42", "43", "44"], color: "Blanco", material: "Cuero", image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=60" },
+            { id: 97, name: "Nike Sportswear Club Fleece Vest", category: "Abrigos", price: 70.00, size: ["M", "L", "XL"], color: "Negro", material: "Algodón", image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=600&auto=format&fit=crop&q=60" },
+            { id: 98, name: "Nike Dri-FIT UV Miler Top", category: "Camisetas", price: 40.00, size: ["S", "M", "L", "XL"], color: "Verde", material: "Poliéster", image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60" },
+            { id: 99, name: "Nike Air Max 90 Terrascape Plus", category: "Zapatillas", price: 160.00, size: ["41", "42", "43", "44"], color: "Negro", material: "Poliéster", image: "https://images.unsplash.com/photo-1514989940723-e8e5af6ab53e?w=600&auto=format&fit=crop&q=60" },
+            { id: 100, name: "Nike Tech Fleece Ultimate Joggers", category: "Pantalones", price: 119.99, size: ["S", "M", "L", "XL"], color: "Azul", material: "Tech Fleece", image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=600&auto=format&fit=crop&q=60" }
         ];
 
         let selectedSizes = [];
@@ -288,7 +373,7 @@
                         <div>
                             <div class="flex justify-between items-start mb-1">
                                 <h3 class="font-bold text-slate-900 text-base">${p.name}</h3>
-                                <span class="font-black text-blue-600 text-base">${p.price.toFixed(2)}€</span>
+                                <span class="font-black text-black text-base">${p.price.toFixed(2)}€</span>
                             </div>
                             <div class="flex items-center gap-2 text-xs text-slate-500 mt-2">
                                 <span class="bg-slate-100 px-2 py-0.5 rounded font-medium">Color: ${p.color}</span>
@@ -296,10 +381,10 @@
                             </div>
                         </div>
                         <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <div class="flex gap-1">
+                            <div class="flex gap-1 flex-wrap max-w-[150px]">
                                 ${p.size.map(s => `<span class="text-[10px] font-bold border border-slate-200 rounded px-1.5 py-0.5 text-slate-600">${s}</span>`).join('')}
                             </div>
-                            <button onclick="addToCart()" class="bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
+                            <button onclick="addToCart()" class="bg-black hover:bg-slate-800 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 flex-shrink-0">
                                 <i class="fa-solid fa-plus"></i> Añadir
                             </button>
                         </div>
@@ -313,20 +398,20 @@
             if (type === 'size') {
                 if (selectedSizes.includes(val)) {
                     selectedSizes = selectedSizes.filter(s => s !== val);
-                    btn.classList.remove('border-blue-600', 'bg-blue-50', 'text-blue-600');
+                    btn.classList.remove('border-black', 'bg-slate-100', 'text-black');
                     btn.classList.add('border-slate-200', 'text-slate-600');
                 } else {
                     selectedSizes.push(val);
-                    btn.classList.add('border-blue-600', 'bg-blue-50', 'text-blue-600');
+                    btn.classList.add('border-black', 'bg-slate-100', 'text-black');
                     btn.classList.remove('border-slate-200', 'text-slate-600');
                 }
             } else if (type === 'color') {
                 if (selectedColors.includes(val)) {
                     selectedColors = selectedColors.filter(c => c !== val);
-                    btn.classList.remove('ring-4', 'ring-blue-400');
+                    btn.classList.remove('ring-4', 'ring-slate-400');
                 } else {
                     selectedColors.push(val);
-                    btn.classList.add('ring-4', 'ring-blue-400');
+                    btn.classList.add('ring-4', 'ring-slate-400');
                 }
             }
             renderProducts();
@@ -340,11 +425,11 @@
             selectedSizes = [];
             selectedColors = [];
             document.querySelectorAll('.filter-btn-size').forEach(btn => {
-                btn.classList.remove('border-blue-600', 'bg-blue-50', 'text-blue-600');
+                btn.classList.remove('border-black', 'bg-slate-100', 'text-black');
                 btn.classList.add('border-slate-200', 'text-slate-600');
             });
             document.querySelectorAll('#colorFilters button').forEach(btn => {
-                btn.classList.remove('ring-4', 'ring-blue-400');
+                btn.classList.remove('ring-4', 'ring-slate-400');
             });
             renderProducts();
         }
@@ -355,7 +440,7 @@
         }
 
         function toggleCart() {
-            alert(`Tienes ${cartCount} prenda(s) seleccionadas en tu cesta de Vistefacil.`);
+            alert(`Tienes ${cartCount} prenda(s) Nike seleccionadas en tu cesta de Vistefacil.`);
         }
 
         // Event Listeners
